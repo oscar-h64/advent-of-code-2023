@@ -1,4 +1,4 @@
-use std::collections::{BinaryHeap, HashMap};
+use std::collections::HashMap;
 
 pub fn a(inp: &str) -> u64 {
     inp.split_whitespace().map(|line| {

@@ -1,6 +1,7 @@
 mod day1;
 
 use std::{env, fs};
+use std::time::Instant;
 
 fn run_day(day: u8, puzzle: &str, f: fn(&str) -> u64) {
     println!("Running day {} puzzle {}\n", day, puzzle);
@@ -13,9 +14,12 @@ fn run_day(day: u8, puzzle: &str, f: fn(&str) -> u64) {
 
     println!("Input read, running code...\n");
 
+    let now = Instant::now();
     let res = f(inp);
+    let puzzle_time = now.elapsed();
 
     println!("Output: {}", res);
+    println!("Solution took {:?}", puzzle_time);
 }
 
 fn main() {
