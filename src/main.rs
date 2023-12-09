@@ -1,4 +1,5 @@
 mod day1;
+mod day2;
 
 use std::{env, fs};
 use std::time::Instant;
@@ -10,7 +11,7 @@ fn run_day(day: u8, puzzle: &str, f: fn(&str) -> u64) {
 
     let inp_owned = fs::read_to_string(file_name)
         .expect("Failed to read the input file");
-    let inp = inp_owned.as_str();
+    let inp = inp_owned.as_str().trim_end();
 
     println!("Input read, running code...\n");
 
@@ -39,6 +40,12 @@ fn main() {
         }
         (1, "B") => {
             run_day(1, "B", day1::b);
+        }
+        (2, "A") => {
+            run_day(2, "A", day2::a);
+        }
+        (2, "B") => {
+            run_day(2, "B", day2::b);
         }
         (_, _) => {
             println!("Unknown day/puzzle {} {}", day, puzzle)
