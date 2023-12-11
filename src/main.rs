@@ -1,5 +1,6 @@
 mod day1;
 mod day2;
+mod day3;
 
 use std::{env, fs};
 use std::time::Instant;
@@ -46,6 +47,12 @@ fn main() {
         }
         (2, "B") => {
             run_day(2, "B", day2::b);
+        }
+        (3, "A") => {
+            run_day(3, "A", day3::a);
+        }
+        (3, "B") => {
+            run_day(3, "B", day3::b);
         }
         (_, _) => {
             println!("Unknown day/puzzle {} {}", day, puzzle)
