@@ -1,6 +1,7 @@
 mod day1;
 mod day2;
 mod day3;
+mod day4;
 
 use std::{env, fs};
 use std::time::Instant;
@@ -36,26 +37,14 @@ fn main() {
     let puzzle = args[2].as_str();
 
     match (day, puzzle) {
-        (1, "A") => {
-            run_day(1, "A", day1::a);
-        }
-        (1, "B") => {
-            run_day(1, "B", day1::b);
-        }
-        (2, "A") => {
-            run_day(2, "A", day2::a);
-        }
-        (2, "B") => {
-            run_day(2, "B", day2::b);
-        }
-        (3, "A") => {
-            run_day(3, "A", day3::a);
-        }
-        (3, "B") => {
-            run_day(3, "B", day3::b);
-        }
-        (_, _) => {
-            println!("Unknown day/puzzle {} {}", day, puzzle)
-        }
+        (1, "A") => run_day(1, "A", day1::a),
+        (1, "B") => run_day(1, "B", day1::b),
+        (2, "A") => run_day(2, "A", day2::a),
+        (2, "B") => run_day(2, "B", day2::b),
+        (3, "A") => run_day(3, "A", day3::a),
+        (3, "B") => run_day(3, "B", day3::b),
+        (4, "A") => run_day(4, "A", day4::a),
+        (4, "B") => run_day(4, "B", day4::b),
+        (_, _) => println!("Unknown day/puzzle {} {}", day, puzzle),
     }
 }
